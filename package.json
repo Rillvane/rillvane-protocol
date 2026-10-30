@@ -11,6 +11,12 @@
     "check": "node tools/check.mjs",
     "test": "node --test backend/*.test.mjs",
     "test:backend": "node --test backend/*.test.mjs",
-    "test:contracts": "cargo test --manifest-path programs/rillvane/Cargo.toml"
+    "test:contracts": "cargo test --manifest-path programs/rillvane/Cargo.toml",
+    "start": "node --env-file-if-exists=.env backend/server.mjs",
+    "dev": "node --env-file-if-exists=.env backend/server.mjs",
+    "bootstrap": "node --env-file-if-exists=.env scripts/bootstrap.mjs",
+    "verify:flow": "node scripts/verify-flow.mjs",
+    "deploy:devnet": "node --env-file-if-exists=.env scripts/deploy-devnet.mjs",
+    "verify:devnet": "node --env-file-if-exists=.env scripts/verify-devnet.mjs"
   }
 }
