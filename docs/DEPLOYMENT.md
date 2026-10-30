@@ -13,3 +13,7 @@ The example Caddy block proxies app.rillvane.trade and hides operator/probe endp
 Back up SQLite through its online backup API, not a copy of an active WAL main file: node --env-file=.env backend/backup.mjs /private/backups/rillvane.sqlite. Store encrypted backups off-host and test restoration. Preserve the database, .env, registry and keys across updates. Do not run replicas against this SQLite database.
 
 Production starts only if database/RPC readiness succeeds. See backend/preflight.mjs and operations.test.mjs for the implemented checks. No external audit, monitoring service, backup schedule or public deployment is created by this repository.
+
+## Contract build and explicit devnet deployment
+
+Install the Solana SBF toolchain and run bash scripts/wsl-build-sbf.sh (the name is retained for compatibility; the script also works on Linux). The repository includes no program keypair or deployer keypair. To deploy your own program, set DEPLOYER_KEYPAIR_PATH and PROGRAM_KEYPAIR_PATH to private files outside the checkout, then run npm run deploy:devnet. Set PROGRAM_ARTIFACT if the SBF toolchain wrote the .so elsewhere. The command only deploys the program on devnet; it does not create market accounts, mints or authority roles or write a registry. Provision matching accounts separately.
