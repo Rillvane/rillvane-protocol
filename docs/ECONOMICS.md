@@ -1,6 +1,6 @@
 # Rillvane protocol economics
 
-Version 1.0 · G01–G05 locked for the MVP. TypeScript (`backend/math.mjs`) and the Rust program use these integer rules only. No floating-point custody, debt, shares, or settlement.
+Version 1.0 · G01–G05 locked for the MVP. JavaScript (`backend/math.mjs`) and the Rust program use these integer rules only. No floating-point custody, debt, shares, or settlement.
 
 ## Market
 

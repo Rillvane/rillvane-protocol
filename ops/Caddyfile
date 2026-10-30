@@ -1,0 +1,6 @@
+app.rillvane.trade {
+    encode zstd gzip
+    @private path /api/ops/* /livez /readyz
+    respond @private 404
+    reverse_proxy 127.0.0.1:8787
+}
